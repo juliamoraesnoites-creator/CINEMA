@@ -1,0 +1,728 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+    --cor-principal: #e50914;
+    --cor-principal-hover: #b20710;
+
+    --fundo: #0b0b0f;
+    --fundo-card: #17171d;
+
+    --texto: #ffffff;
+    --texto-secundario: #a8a8b3;
+
+    --borda: #292930;
+
+    --transicao: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    transition: var(--transicao);
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.header {
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(11, 11, 15, 0.95);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--cor-principal);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transicao);
+}
+
+.nav a:hover {
+    color: var(--cor-principal);
+}
+
+.tema-btn {
+    border: 1px solid var(--borda);
+    background: var(--fundo-card);
+    color: var(--texto);
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b0b0f 20%,
+            rgba(11, 11, 15, 0.85) 50%,
+            rgba(11, 11, 15, 0.3)
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            #7d1118,
+            #0b0b0f 50%
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.destaque {
+    color: #ff6b72;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--cor-principal);
+}
+
+.hero p {
+    color: var(--texto-secundario);
+
+    max-width: 550px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    border-radius: 8px;
+
+    background: var(--cor-principal);
+
+    color: white;
+
+    text-decoration: none;
+
+    border: none;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transicao);
+}
+
+.btn:hover {
+    background: var(--cor-principal-hover);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SEÇÃO FILMES
+========================= */
+
+.filmes-section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-title span,
+.compra-texto > span {
+    color: var(--cor-principal);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+
+    margin: 5px 0;
+}
+
+.section-title p {
+    color: var(--texto-secundario);
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+.filtro {
+    padding: 9px 18px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: var(--texto);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: var(--transicao);
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background: var(--cor-principal);
+    border-color: var(--cor-principal);
+}
+
+
+/* =========================
+   GRID DE FILMES
+========================= */
+
+.filmes-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.filme-card {
+    background: var(--fundo-card);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: var(--transicao);
+}
+
+.filme-card:hover {
+    transform: translateY(-7px);
+}
+
+
+/* =========================
+   POSTERS
+========================= */
+
+.poster {
+    height: 320px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 15px;
+
+    background-size: cover;
+}
+
+.poster span {
+    background: rgba(0, 0, 0, 0.75);
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 0.75rem;
+}
+
+.poster-1 {
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #7c151b
+        );
+}
+
+.poster-2 {
+    background:
+        linear-gradient(
+            145deg,
+            #482c14,
+            #d17a18
+        );
+}
+
+.poster-3 {
+    background:
+        linear-gradient(
+            145deg,
+            #122b45,
+            #5b2e91
+        );
+}
+
+.poster-4 {
+    background:
+        linear-gradient(
+            145deg,
+            #080808,
+            #26302b
+        );
+}
+
+
+/* =========================
+   INFORMAÇÕES DO FILME
+========================= */
+
+.filme-info {
+    padding: 18px;
+}
+
+.filme-info h3 {
+    margin-bottom: 5px;
+}
+
+.filme-info p {
+    color: var(--texto-secundario);
+
+    font-size: 0.85rem;
+}
+
+.filme-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 18px;
+}
+
+.filme-bottom strong {
+    color: #ffc107;
+}
+
+.comprar-btn {
+    border: none;
+
+    background: var(--cor-principal);
+
+    color: white;
+
+    padding: 8px 13px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+
+/* =========================
+   COMPRA
+========================= */
+
+.compra-section {
+    padding: 100px 7%;
+
+    background: #121217;
+}
+
+.compra-container {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.compra-texto h2 {
+    font-size: 2.8rem;
+
+    margin: 10px 0 20px;
+}
+
+.compra-texto p {
+    color: var(--texto-secundario);
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.formulario {
+    background: var(--fundo-card);
+
+    border: 1px solid var(--borda);
+
+    padding: 30px;
+
+    border-radius: 15px;
+}
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 7px;
+
+    border: 1px solid var(--borda);
+
+    background: #0e0e12;
+
+    color: white;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: var(--cor-principal);
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.resumo {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid var(--borda);
+
+    padding-top: 20px;
+
+    margin-top: 10px;
+}
+
+.resumo strong {
+    color: var(--cor-principal);
+
+    font-size: 1.2rem;
+}
+
+.btn-submit {
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 35px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid var(--borda);
+}
+
+footer p {
+    color: var(--texto-secundario);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2000;
+
+    padding: 20px;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--fundo-card);
+
+    border: 1px solid var(--borda);
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.modal-icon {
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: var(--texto-secundario);
+
+    margin-bottom: 25px;
+}
+
+.fechar {
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--texto);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MODO CLARO
+========================= */
+
+body.claro {
+    --fundo: #f5f5f7;
+    --fundo-card: #ffffff;
+
+    --texto: #18181b;
+    --texto-secundario: #66666f;
+
+    --borda: #dddddf;
+}
+
+body.claro .header {
+    background: rgba(245, 245, 247, 0.95);
+}
+
+body.claro .hero {
+    background:
+        linear-gradient(
+            90deg,
+            #f5f5f7 20%,
+            rgba(245, 245, 247, 0.85) 50%,
+            rgba(245, 245, 247, 0.3)
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            #ffb4b7,
+            #f5f5f7 50%
+        );
+}
+
+body.claro .compra-section {
+    background: #e9e9ed;
+}
+
+body.claro .campo input,
+body.claro .campo select {
+    background: #f5f5f7;
+    color: #18181b;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .filmes-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .compra-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+
+        padding: 70px 5%;
+    }
+
+    .filmes-section,
+    .compra-section {
+        padding: 70px 5%;
+    }
+
+    .filmes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .poster {
+        height: 280px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}

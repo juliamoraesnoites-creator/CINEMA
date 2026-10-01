@@ -1,0 +1,602 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CineMax - Consulte filmes em cartaz e reserve seus ingressos."
+    >
+
+    <title>CineMax | Ingressos de Cinema</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <a href="#inicio" class="logo" aria-label="CineMax - Página inicial">
+            🎬 Cine<span>Max</span>
+        </a>
+
+        <nav class="nav" aria-label="Navegação principal">
+
+            <a href="#inicio">Início</a>
+            <a href="#filmes">Filmes</a>
+            <a href="#ingressos">Ingressos</a>
+
+        </nav>
+
+        <button
+            id="temaBtn"
+            class="tema-btn"
+            type="button"
+            aria-label="Alternar entre modo claro e escuro"
+            title="Alterar tema"
+        >
+            🌙
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <span class="destaque">
+                    🍿 A magia do cinema começa aqui
+                </span>
+
+                <h1>
+                    Escolha seu filme.<br>
+                    <span>Compre seu ingresso.</span>
+                </h1>
+
+                <p>
+                    Encontre os melhores filmes em cartaz,
+                    escolha sua sessão e garanta seu lugar.
+                </p>
+
+                <a href="#filmes" class="btn">
+                    Ver filmes
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILMES ================= -->
+
+        <section id="filmes" class="filmes-section">
+
+            <div class="section-title">
+
+                <span>CATÁLOGO</span>
+
+                <h2>Filmes em cartaz</h2>
+
+                <p>
+                    Escolha seu próximo filme.
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="filtros" aria-label="Filtros de filmes">
+
+                <button
+                    class="filtro ativo"
+                    type="button"
+                    data-genero="todos"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-genero="acao"
+                >
+                    Ação
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-genero="comedia"
+                >
+                    Comédia
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-genero="animacao"
+                >
+                    Animação
+                </button>
+
+                <button
+                    class="filtro"
+                    type="button"
+                    data-genero="terror"
+                >
+                    Terror
+                </button>
+
+            </div>
+
+
+            <!-- CARDS -->
+
+            <div class="filmes-grid">
+
+
+                <!-- FILME 1 -->
+
+                <article
+                    class="filme-card"
+                    data-genero="acao"
+                >
+
+                    <div
+                        class="poster poster-1"
+                        role="img"
+                        aria-label="Pôster de A Última Missão"
+                    >
+                        <span>16</span>
+                    </div>
+
+                    <div class="filme-info">
+
+                        <h3>A Última Missão</h3>
+
+                        <p>
+                            Ação • 2h 10min
+                        </p>
+
+                        <div class="filme-bottom">
+
+                            <strong>⭐ 8.7</strong>
+
+                            <button
+                                class="comprar-btn"
+                                type="button"
+                                data-filme="A Última Missão"
+                            >
+                                Comprar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FILME 2 -->
+
+                <article
+                    class="filme-card"
+                    data-genero="comedia"
+                >
+
+                    <div
+                        class="poster poster-2"
+                        role="img"
+                        aria-label="Pôster de Férias em Família"
+                    >
+                        <span>12</span>
+                    </div>
+
+                    <div class="filme-info">
+
+                        <h3>Férias em Família</h3>
+
+                        <p>
+                            Comédia • 1h 45min
+                        </p>
+
+                        <div class="filme-bottom">
+
+                            <strong>⭐ 8.1</strong>
+
+                            <button
+                                class="comprar-btn"
+                                type="button"
+                                data-filme="Férias em Família"
+                            >
+                                Comprar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FILME 3 -->
+
+                <article
+                    class="filme-card"
+                    data-genero="animacao"
+                >
+
+                    <div
+                        class="poster poster-3"
+                        role="img"
+                        aria-label="Pôster de O Mundo Mágico"
+                    >
+                        <span>L</span>
+                    </div>
+
+                    <div class="filme-info">
+
+                        <h3>O Mundo Mágico</h3>
+
+                        <p>
+                            Animação • 1h 50min
+                        </p>
+
+                        <div class="filme-bottom">
+
+                            <strong>⭐ 9.0</strong>
+
+                            <button
+                                class="comprar-btn"
+                                type="button"
+                                data-filme="O Mundo Mágico"
+                            >
+                                Comprar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FILME 4 -->
+
+                <article
+                    class="filme-card"
+                    data-genero="terror"
+                >
+
+                    <div
+                        class="poster poster-4"
+                        role="img"
+                        aria-label="Pôster de A Casa Sombria"
+                    >
+                        <span>18</span>
+                    </div>
+
+                    <div class="filme-info">
+
+                        <h3>A Casa Sombria</h3>
+
+                        <p>
+                            Terror • 1h 55min
+                        </p>
+
+                        <div class="filme-bottom">
+
+                            <strong>⭐ 8.4</strong>
+
+                            <button
+                                class="comprar-btn"
+                                type="button"
+                                data-filme="A Casa Sombria"
+                            >
+                                Comprar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMPRA ================= -->
+
+        <section id="ingressos" class="compra-section">
+
+            <div class="compra-container">
+
+
+                <div class="compra-texto">
+
+                    <span>RESERVE SEU LUGAR</span>
+
+                    <h2>
+                        Garanta seu ingresso
+                    </h2>
+
+                    <p>
+                        Escolha o filme, horário e quantidade
+                        de ingressos para realizar sua reserva.
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="formCompra"
+                    class="formulario"
+                    novalidate
+                >
+
+                    <!-- NOME -->
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            minlength="2"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="campo">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- FILME -->
+
+                    <div class="campo">
+
+                        <label for="filme">
+                            Filme
+                        </label>
+
+                        <select
+                            id="filme"
+                            name="filme"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione um filme
+                            </option>
+
+                            <option value="A Última Missão">
+                                A Última Missão
+                            </option>
+
+                            <option value="Férias em Família">
+                                Férias em Família
+                            </option>
+
+                            <option value="O Mundo Mágico">
+                                O Mundo Mágico
+                            </option>
+
+                            <option value="A Casa Sombria">
+                                A Casa Sombria
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SESSÃO + QUANTIDADE -->
+
+                    <div class="form-row">
+
+                        <div class="campo">
+
+                            <label for="sessao">
+                                Sessão
+                            </label>
+
+                            <select
+                                id="sessao"
+                                name="sessao"
+                                required
+                            >
+
+                                <option value="">
+                                    Escolha o horário
+                                </option>
+
+                                <option value="14:00">
+                                    14:00
+                                </option>
+
+                                <option value="16:30">
+                                    16:30
+                                </option>
+
+                                <option value="19:00">
+                                    19:00
+                                </option>
+
+                                <option value="21:30">
+                                    21:30
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="quantidade">
+                                Ingressos
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantidade"
+                                name="quantidade"
+                                min="1"
+                                max="10"
+                                value="1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+
+                    <div class="resumo">
+
+                        <span>Total</span>
+
+                        <strong id="total">
+                            R$ 25,00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- BOTÃO -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-submit"
+                    >
+                        Confirmar compra
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <a href="#inicio" class="logo">
+            🎬 Cine<span>Max</span>
+        </a>
+
+        <p>
+            © 2026 CineMax. Projeto acadêmico.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div
+        id="modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitulo"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="fecharModal"
+                class="fechar"
+                type="button"
+                aria-label="Fechar janela"
+            >
+                ×
+            </button>
+
+            <div
+                class="modal-icon"
+                aria-hidden="true"
+            >
+                🎟️
+            </div>
+
+            <h2 id="modalTitulo">
+                Reserva realizada!
+            </h2>
+
+            <p id="mensagemCompra">
+                Seu ingresso foi reservado com sucesso.
+            </p>
+
+            <button
+                id="modalOk"
+                class="btn"
+                type="button"
+            >
+                Continuar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
